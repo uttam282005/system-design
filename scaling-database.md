@@ -98,9 +98,9 @@ graph TD
 
 ```mermaid
 graph TD
-    App[Application Logic] --> |"ID: 1-1M"| Shard1[DB Server 1 <br> (Shard 1)]
-    App --> |"ID: 1M-2M"| Shard2[DB Server 2 <br> (Shard 2)]
-    App --> |"ID: 2M-3M"| Shard3[DB Server 3 <br> (Shard 3)]
+    App[Application Logic] --> |"ID: 1-1M"| Shard1["DB Server 1 <br> (Shard 1)"]
+    App --> |"ID: 1M-2M"| Shard2["DB Server 2 <br> (Shard 2)"]
+    App --> |"ID: 2M-3M"| Shard3["DB Server 3 <br> (Shard 3)"]
 ```
 
 ### Sharding Strategies
