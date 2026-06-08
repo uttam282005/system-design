@@ -32,8 +32,6 @@ Traditional databases write data to physical disks (HDDs or SSDs), which are vas
 * **Capacity:** RAM is more expensive and provides much less storage space than disks.
 * **Durability (Volatility):** If power is lost, data in RAM vanishes. While you can use a Write-Ahead Log (WAL) to restore data, writing that log back to a disk introduces the exact speed bottleneck you are trying to avoid.
 
-
-
 ### Optimization B: Minimizing Network Latency via Stored Procedures
 
 In standard application design, a server sends SQL queries over the network to a database. Even if a script is small (e.g., 2 KB), sending the entire text of the query across the network takes significantly more time than a fast CPU core takes to execute instructions.
