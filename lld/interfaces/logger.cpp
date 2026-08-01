@@ -8,13 +8,13 @@ public:
 };
 
 class PlainTextFormatter : public Formatter {
-    string format(const string &message) {
+    string format(const string &message) override {
         return message + "\n";
     }
 };
 
 class JSONFormatter : public Formatter {
-    string format(const string &message) {
+    string format(const string &message) override {
         string formattedMessage = "{ ";
         formattedMessage += "message: ";
         formattedMessage += message;
