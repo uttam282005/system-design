@@ -109,3 +109,11 @@ int main() {
 
     return 0;
 }
+
+class Observer;
+
+class Subject {
+    virtual void registerObserver(Observer* o);
+    virtual void removeObserver(Observer* o);
+    virtual void notifyObservers();
+};
