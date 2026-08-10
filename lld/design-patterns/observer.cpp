@@ -26,41 +26,41 @@ private:
 
 public:
     FitnessData() : steps(0), activeMinutes(0), calories(0) {}
-    
+
     void registerObserver(FitnessDataObserver* observer) override {
         observers.push_back(observer);
     }
-    
+
     void removeObserver(FitnessDataObserver* observer) override {
         observers.erase(remove(observers.begin(), observers.end(), observer), observers.end());
     }
-    
+
     void notifyObservers() override {
         for (FitnessDataObserver* observer : observers) {
             observer->update(this);
         }
     }
-    
+
     void newFitnessDataPushed(int newSteps, int newActiveMinutes, int newCalories) {
         steps = newSteps;
         activeMinutes = newActiveMinutes;
         calories = newCalories;
-        
+
         cout << "\nFitnessData: New data received – Steps: " << steps 
              << ", Active Minutes: " << activeMinutes << ", Calories: " << calories << endl;
-        
+
         notifyObservers();
     }
-    
+
     void dailyReset() {
         steps = 0;
         activeMinutes = 0;
         calories = 0;
-        
+
         cout << "\nFitnessData: Daily reset performed." << endl;
         notifyObservers();
     }
-    
+
     // Getters
     int getSteps() const { return steps; }
     int getActiveMinutes() const { return activeMinutes; }
