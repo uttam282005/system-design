@@ -36,9 +36,7 @@
 // classes and inerfaces
 
 #include <ctime>
-#include <memory>
 #include <string>
-#include <vector>
 
 enum Status { PENDING, IN_PROGRESS, COMPLETED };
 class User {};
@@ -46,27 +44,24 @@ class User {};
 class Task {
     inline static int taskID = 0;
 public:
-    User createdBy;
     Status status;
     std::tm due_date;
     std::string name;
     std::string description;
 
-    Task(User user, std::string name, std::string description, std::tm due_date) : name(name), description(description), due_date(due_date), createdBy(user) { taskID++; }
+    Task(std::string name, std::string description, std::tm due_date) : name(name), description(description), due_date(due_date){ taskID++; }
 };
 
 class User::User {
 public:
     const unsigned int userID;
     std::string name;
-    std::vector<std::unique_ptr<Task>> tasks;
 };
 
 class Datastore {
     virtual bool _add() = 0;
     virtual bool _delete() = 0;
-    virtual bool _update() = 0;
-    virtual bool _get() = 0;
+    virtual bool _getByID() = 0;
 
     virtual ~Datastore() = 0;
 };
