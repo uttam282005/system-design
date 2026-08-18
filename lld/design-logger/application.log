@@ -1,0 +1,5 @@
+[2026-08-18 20:02:51] [INFO] [Thread: 139977278052224] Server started
+[2026-08-18 20:02:51] [WARN] [Thread: 139977278052224] Memory usage is high
+[2026-08-18 20:02:51] [ERROR] [Thread: 139977278052224] Database connection failed
+[2026-08-18 20:02:51] [FATAL] [Thread: 139977278052224] System shutting down
+[2026-08-18 20:02:51] [ERROR] [Thread: 139977278052224] This will be logged
